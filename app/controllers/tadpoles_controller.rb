@@ -47,18 +47,18 @@ class TadpolesController < ApplicationController
     end
   end
 
-  def metamorphose 
-    frog = Frog.new 
-    frog.name = @tadpole.name 
-    frog.color = @tadpole.color 
-    frog.pond = @tadpole.pond 
-    if frog.save 
-      @tadpole.destroy 
+  def metamorphose
+    frog = Frog.new
+    frog.name = @tadpole.name
+    frog.color = @tadpole.color
+    frog.pond = @tadpole.pond
+    if frog.save
+      @tadpole.destroy
       redirect_to frog, notice: "#{frog.name} the Tadpole successfully became a frog."
-    else 
-      render :show 
-    end 
-  end 
+    else
+      render :show
+    end
+  end
 
   private
     def set_tadpole
